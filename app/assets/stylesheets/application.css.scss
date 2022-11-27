@@ -17,12 +17,16 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.alert-alert { @extend .alert-danger; }
+.alert-notice { @extend .alert-success; }
+
 .devisebtn{
   float: right !important;
+
 }
 
 .whiteh {
-  color: white;
+  color: white ;
 }
 
 .greyh{
