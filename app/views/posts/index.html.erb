@@ -1,5 +1,5 @@
 
-<div class="container">
+
 <h1 class="whiteh">Posts</h1>
 
 <table class="table">
@@ -14,10 +14,11 @@
 
   <tbody>
     <% @posts.each do |post| %>
+  <% puts post.user.id %>
       <tr>
-        <td class="whiteh"><%= post.title %></td>
-        <td class="whiteh"><%= post.body %></td>
-        <td class="whiteh"><%= post.email %></td>
+        <td class="whiteh text-nowrap"><%= post.title %></td>
+        <td class="whiteh text-wrap"><%= post.body %></td>
+        <td class="whiteh"><%= post.email.split('@')[0] %></td>
         <td><%= link_to 'Show', post, class: 'btn btn-primary whiteh' %></td>
         <% if user_signed_in? && (current_user.email == post.email || current_user.admin)  %>
           <td><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning whiteh' %></td>
@@ -31,4 +32,3 @@
 <br>
 
 <%= link_to 'New Post', new_post_path, class: 'btn btn-success' %>
-</div>

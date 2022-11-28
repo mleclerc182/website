@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, password_length: 8..128
 
+  has_many :posts
+ has_many :comments, dependent: :destroy
+  belongs_to :plan
+
   validate :password_complexity
 
 

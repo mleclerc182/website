@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :posts
+  get 'comments/create'
+  resources :posts do
+    post 'comments', to: 'comments#create'
+  end
   devise_for :users, controllers: { sessions: 'users/sessions' }
   root 'pages#home'
-  get 'pages/home'
   get 'unban', to: 'unban#index'
   get 'about', to: 'pages#about'
   get 'milo', to: 'milo#index'
