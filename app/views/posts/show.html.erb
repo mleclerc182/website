@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <div class="container text-center from-disp">
   <p class="whiteh">
     <strong>Title:</strong>
@@ -29,7 +28,7 @@
   <br> <br> <br> <br><br>
   <div class="container ">
   <% @comments.each  do |comment| %>
-      <%curcomment="[#{comment.created_at.strftime("%I :%M %p")}] #{comment.user.email}: #{comment.body}" %>
+      <%curcomment="[#{comment.created_at.strftime("%I :%M %p")}] #{comment.user.username}: #{comment.body}" %>
       <div class="card">
         <%= curcomment %>
       </div>
