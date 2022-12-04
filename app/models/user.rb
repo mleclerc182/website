@@ -7,6 +7,7 @@ class User < ApplicationRecord
  has_many :posts
  has_many :comments, dependent: :destroy
  belongs_to :plan
+ has_one :profile
 
  validate :password_complexity
  validate :username_exists

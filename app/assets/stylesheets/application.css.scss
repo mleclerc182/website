@@ -16,6 +16,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "./actiontext.scss";
+
+.profile-well {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-btn{
+  padding: 10px;
+  font-size: 24px;
+}
 
 .alert-alert { @extend .alert-danger; }
 .alert-notice { @extend .alert-success; }

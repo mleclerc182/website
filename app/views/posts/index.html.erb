@@ -32,6 +32,9 @@
         <% if user_signed_in? && (current_user.email == post.email || current_user.admin)  %>
           <td><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning whiteh' %></td>
           <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-danger whiteh' %></td>
+          <% else %>
+          <td></td>
+          <td></td>
         <% end %>
       </tr>
     <% end %>

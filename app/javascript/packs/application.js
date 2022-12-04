@@ -10,6 +10,7 @@ import "channels"
 import "trix"
 import "@rails/actiontext"
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

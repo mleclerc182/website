@@ -1,0 +1,22 @@
+.containertext{
+    background-color: #34295A;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.card-title {
+    font-size: 15px;
+    padding-bottom: 0px;
+}
+
+.card-body {
+    padding-top: 0px;
+}
+
+.comment-box{
+    border:1px solid black;
+    padding-bottom:  15px;
+}
+.trix-button-group--file-tools {
+    display: none !important;
+}

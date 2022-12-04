@@ -9,4 +9,15 @@
     <h1 class="whiteh">Skilled Theory's site. Maybe more to come.</h1>
     <h2 class="whiteh">Right now you can view a random photo of my dog: Mr Mooloo, the oreo colored ferocious nanimal(Milo for short)</h2>
   </div>
+  <% if user_signed_in?%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="well profile-well">
+          <%=link_to "Fill out profile information", new_user_profile_path(current_user.id), class: 'profile-btn btn btn-success whiteh' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end %>
 </html>

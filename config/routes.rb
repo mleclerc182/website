@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  get 'comments/create'
+  resources :comments, only: [:destroy]
   resources :posts do
     post 'comments', to: 'comments#create'
   end
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+  resources :users do
+    resource :profile
+  end
   root 'pages#home'
   get 'unban', to: 'unban#index'
   get 'about', to: 'pages#about'
