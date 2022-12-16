@@ -7,17 +7,29 @@
   </head>
   <div class="home-callout text-center container-fluid">
     <h1 class="whiteh">Skilled Theory's site. Maybe more to come.</h1>
-    <h2 class="whiteh">Right now you can view a random photo of my dog: Mr Mooloo, the oreo colored ferocious nanimal(Milo for short)</h2>
+    <h2 class="whiteh">A random site with random functionality I made to learn web development</h2>
   </div>
   <% if user_signed_in?%>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="well profile-well">
-          <%=link_to "Fill out profile information", new_user_profile_path(current_user.id), class: 'profile-btn btn btn-success whiteh' %>
-        </div>
-      </div>
+  <div class="profile-well">
+    <h1>What would you like to do?</h1>
+    <div class = "btn-group">
+           <% unless Profile.exists?(user_id: current_user.id) %>
+          <%=link_to "Create Profile", new_user_profile_path(current_user.id), class: 'profile-btn ' %>
+          <% else  %>
+          <%=link_to "View Profile", user_path(current_user.id), class: 'profile-btn ' %>
+            <%=link_to "Edit Profile Information",  edit_user_profile_path(current_user.id), class: 'profile-btn ' %>
+        <% end  %>
     </div>
   </div>
-<%end %>
+    <% end %>
+    <div class="profile-well">
+      <h2 class="whiteh">Browse users</h2>
+      <div class = "btn-group">
+    <%  @profiles.each do |profile| %>
+          <%=link_to profile.user.username, user_path(profile.user_id), class: 'profile-btn ' %>
+    <% end %>
+      </div>
+    </div>
+
+
 </html>

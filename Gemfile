@@ -46,7 +46,7 @@ group :development do
 end
 
 #group :production do
-# gem 'mysql2'
+#gem 'mysql2'
 #end
 
 
@@ -72,3 +72,6 @@ gem "font-awesome-sass", "~> 6.2.0"
 
 gem 'net-smtp'
 gem 'devise'
+gem 'mime-types-data'
+gem 'mimemagic'
+gem "kt-paperclip", "~> 6.4", ">= 6.4.1"

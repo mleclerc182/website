@@ -1,11 +1,16 @@
 class Profile < ApplicationRecord
 belongs_to :user
-validates :first_name, presence: true, allow_blank: false
-validates :last_name, presence: true, allow_blank: false
-validates :job_title, presence: true, allow_blank: false
-validates :phone_number, presence: true, allow_blank: false
-validates :contact_email, presence: true, allow_blank: false
-validates :description, presence: true, allow_blank: false
+has_attached_file :avatar,
+                  :styles => {:medium => "300x300>", :thumb=> "100x100>"},
+                  :default_url => "/images/:style/missing.png"
+validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+validates :first_name, presence: true
+validates :last_name, presence: true
+validates :job_title, presence: true
+validates :phone_number, presence: true
+validates :contact_email, presence: true
+validates :description, presence: true
 
 
 end

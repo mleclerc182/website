@@ -19,14 +19,47 @@
 @import "./actiontext.scss";
 
 .profile-well {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  align-content: center;
+  width: 50%;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+
 }
 
 .profile-btn{
-  padding: 10px;
-  font-size: 24px;
+  background-color: #014421;
+  border: none;
+  border-radius: 24px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+
+  &:hover {
+    background-color: #2193b0;
+    color: #6dd5ed;
+    transform: scale(1.1);
+    text-decoration: none;
+  }
 }
 
 .alert-alert { @extend .alert-danger; }
@@ -51,6 +84,9 @@
 
 }
 
+.dropdown-menu{
+  background-color: black ;
+}
 
 .alert-cust {
   padding: 15px;

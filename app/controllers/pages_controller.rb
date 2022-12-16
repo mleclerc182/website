@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   end
 
   def home
+    @profiles = Profile.all
   end
 end

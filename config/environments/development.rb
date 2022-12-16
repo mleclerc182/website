@@ -94,4 +94,5 @@ Rails.application.configure do
 
   config.hosts << "skilledtheory.com"
   config.hosts << "www.skilledtheory.com"
+  Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
 end

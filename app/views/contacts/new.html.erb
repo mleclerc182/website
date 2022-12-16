@@ -5,6 +5,13 @@
 
       <div>
         <%= form_for @contact do |f| %>
+          <% if @contact.errors.any? %>
+            <ul>
+              <% @contact.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          <% end %>
           <div class="form-group whiteh">
             <%= f.label :name %>
             <%= f.text_field :name, class: 'form-control greyh' %>
